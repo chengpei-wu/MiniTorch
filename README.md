@@ -160,3 +160,4 @@ epoch: 11, train_loss: 0.037 | train_accuracy: 0.989| test_accuracy: 0.964
 - GPU acceleration
 - distributed training
 - ...
+- 
