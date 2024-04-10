@@ -157,4 +157,6 @@ epoch: 11, train_loss: 0.037 | train_accuracy: 0.989| test_accuracy: 0.964
 - normalization
 - dropout
 - conv_layers
+- GPU acceleration
+- distributed training
 - ...
