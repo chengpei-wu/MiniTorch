@@ -79,19 +79,12 @@ class Tensor:
             # back propagate the grad to the dependency tensors of dependency tensor.
             dep["tensor"].backward(dep_grad)
 
-    def reshape(self, *args):
-        self.values = self.values.reshape(*args)
-        self.shape = self.values.shape
-        self.grad = self.grad.reshape(self.shape)
-        return self
+    def reshape(self, *shape):
+        return _reshape(self, *shape)
 
     @property
     def T(self):
-        new_tensor = deepcopy(self)
-        new_tensor.values = self.values.T
-        if self.requires_grad:
-            new_tensor.grad = self.grad.T
-        return new_tensor
+        return _transpose(self)
 
     def zero_grad(self):
         self.grad = np.zeros(self.shape)
@@ -145,21 +138,48 @@ class Tensor:
     #     return _pow(self, power, modulo=None)
 
 
+def _transpose(tensor: Tensor):
+    res = tensor.values.T
+    res_requires_grad = tensor.requires_grad
+    res_depends_on = []
+
+    if tensor.requires_grad:
+        def grad_fn(grad):
+            return grad.T
+
+        res_depends_on = [dict({'tensor': tensor, 'grad_fn': grad_fn})]
+
+    return Tensor(values=res, requires_grad=res_requires_grad, depends_on=res_depends_on)
+
+
+def _reshape(tensor: Tensor, *shape):
+    res = tensor.values.reshape(*shape)
+    res_requires_grad = tensor.requires_grad
+    res_depends_on = []
+
+    if tensor.requires_grad:
+        def grad_fn(grad):
+            return grad.reshape(*shape)
+
+        res_depends_on = [dict({'tensor': tensor, 'grad_fn': grad_fn})]
+
+    return Tensor(values=res, requires_grad=res_requires_grad, depends_on=res_depends_on)
+
+
 def _slice(tensor: Tensor, idxs):
     res = tensor.values[idxs]
-    requires_grad = tensor.requires_grad
+    res_requires_grad = tensor.requires_grad
+    res_depends_on = []
 
-    if requires_grad:
+    if tensor.requires_grad:
         def grad_fn(grad):
             bigger_grad = np.zeros_like(res)
             bigger_grad[idxs] = grad
             return bigger_grad
 
-        depends_on = [dict({'tensor': tensor, 'grad_fn': grad_fn})]
-    else:
-        depends_on = []
+        res_depends_on = [dict({'tensor': tensor, 'grad_fn': grad_fn})]
 
-    return Tensor(values=res, requires_grad=requires_grad, depends_on=depends_on)
+    return Tensor(values=res, requires_grad=res_requires_grad, depends_on=res_depends_on)
 
 
 def _matmul(tensor1: Tensor, tensor2: Tensor):
@@ -318,7 +338,4 @@ def _neg(tensor: Tensor):
 
 
 if __name__ == '__main__':
-    a = Tensor([1, 2, 3, 4], requires_grad=True).reshape((2, 2))
-    b = a[0:1]
-    b.backward([[1, 1]])
-    print(a.grad)
+    ...
