@@ -173,7 +173,7 @@ def _slice(tensor: Tensor, idxs):
 
     if tensor.requires_grad:
         def grad_fn(grad):
-            bigger_grad = np.zeros_like(res)
+            bigger_grad = np.zeros_like(tensor.values)
             bigger_grad[idxs] = grad
             return bigger_grad
 
