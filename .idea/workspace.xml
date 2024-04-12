@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="feat(Tensor): add Tensor.T() and Tensor.reshape()">
-      <change beforePath="$PROJECT_DIR$/.idea/GitCommitMessageStorage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitCommitMessageStorage.xml" afterDir="false" />
+    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="fix(Tensor): modify slice gradient computation">
+      <change afterPath="$PROJECT_DIR$/mt/auto_grad/math.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mt/auto_grad/matrix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mt/auto_grad/rand.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mt/auto_grad/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/tensor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/nn/layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/layer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,24 +57,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.activations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_loading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.demo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.layer (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.load_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tensor.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/pythonProject/MiniTorch/mt/dataset/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.activations.executor": "Run",
+    "Python.data_loading.executor": "Run",
+    "Python.demo.executor": "Run",
+    "Python.layer (1).executor": "Run",
+    "Python.load_dataset.executor": "Run",
+    "Python.module.executor": "Run",
+    "Python.rand (1).executor": "Run",
+    "Python.random.executor": "Run",
+    "Python.tensor.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/WorkSpace/pythonProject/MiniTorch/mt/dataset/data",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\pythonProject\MiniTorch\mt\dataset\data" />
@@ -80,7 +87,7 @@
       <recent name="D:\WorkSpace\pythonProject\MiniTorch\mt\dataset" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.demo">
+  <component name="RunManager" selected="Python.rand (1)">
     <configuration name="data_loading" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiniTorch" />
       <option name="ENV_FILES" value="" />
@@ -125,29 +132,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="layer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MiniTorch" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mt/nn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/nn/layer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tensor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="rand (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiniTorch" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,7 +145,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/auto_grad/tensor.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/auto_grad/rand.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MiniTorch" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mt/auto_grad" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\WorkSpace\pythonProject\MiniTorch\mt\auto_grad\rand.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rand (1)" />
+        <item itemvalue="Python.random" />
         <item itemvalue="Python.demo" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.data_loading" />
-        <item itemvalue="Python.layer (1)" />
-        <item itemvalue="Python.tensor" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712813289435</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix(Tensor): modify slice gradient computation">
+      <option name="closed" value="true" />
+      <created>1712814326917</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712814326917</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -265,6 +280,7 @@
     <MESSAGE value="initial commit #2" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="feat(Tensor): add Tensor.T() and Tensor.reshape()" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Tensor): add Tensor.T() and Tensor.reshape()" />
+    <MESSAGE value="fix(Tensor): modify slice gradient computation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Tensor): modify slice gradient computation" />
   </component>
 </project>

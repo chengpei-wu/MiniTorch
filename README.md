@@ -30,10 +30,10 @@ print(x.grad)
 # 6.0
 
 # matrix example
-x = mt.rand_tensor(10, 5)
+x = mt.random(10, 5)
 
-w = mt.rand_tensor(5, 2, requires_grad=True)
-b = mt.rand_tensor(2, requires_grad=True)
+w = mt.random(5, 2, requires_grad=True)
+b = mt.random(2, requires_grad=True)
 
 y = (x @ w) + b
 

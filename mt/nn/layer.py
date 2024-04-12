@@ -1,7 +1,7 @@
 import numpy as np
 
 from mt import Tensor
-from mt import rand_tensor
+from mt import random
 from mt.nn.activations import relu
 from mt.nn.activations import tanh
 from mt.nn.module import Module
@@ -49,5 +49,12 @@ class Linear(Module):
             raise NotImplementedError(f'{method} initialization.')
 
 
+class Embedding(Module):
+    def __init__(self, num_embeddings, embed_dim):
+        super().__init__()
+        
+        self.weights = Tensor()
+
+
 if __name__ == '__main__':
-    x = rand_tensor((10, 10))
+    x = random((10, 10))
