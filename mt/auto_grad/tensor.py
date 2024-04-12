@@ -81,7 +81,7 @@ class Tensor:
     def __repr__(self) -> str:
         return f'{self.values}'
 
-    def __getitem__(self, idxs: Union[int, list]) -> 'Tensor':
+    def __getitem__(self, idxs: 'Tensor') -> 'Tensor':
         return _slice(self, idxs)
 
     def __len__(self) -> int:
@@ -155,8 +155,8 @@ def _reshape(tensor: Tensor, shape: Union[int, tuple]) -> Tensor:
     return Tensor(values=res, requires_grad=res_requires_grad, depends_on=res_depends_on)
 
 
-def _slice(tensor: Tensor, idxs: Union[int, list]) -> Tensor:
-    res = tensor.values[idxs]
+def _slice(tensor: Tensor, idxs: Tensor) -> Tensor:
+    res = tensor.values[idxs.values]
     res_requires_grad = tensor.requires_grad
     res_depends_on = []
 

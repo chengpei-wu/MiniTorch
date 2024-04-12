@@ -5,6 +5,9 @@ from mt import random
 from mt.nn.activations import relu
 from mt.nn.activations import tanh
 from mt.nn.module import Module
+from mt.auto_grad.rand import rand, randn
+from mt.auto_grad.matrix import zeros
+from typing import Union
 
 
 def xavier_init(shape):
@@ -32,12 +35,12 @@ class Linear(Module):
         self.in_feats = in_feats
         self.out_feats = out_feats
 
-        self.weights = Tensor(np.zeros((in_feats, out_feats)), requires_grad=True)
-        self.bias = Tensor(np.zeros(out_feats), requires_grad=True)
+        self.weights = rand(in_feats, out_feats, requires_grad=True)
+        self.bias = zeros(out_feats, requires_grad=True)
         self.reset_param()
         self.activation = init_activation(activation)
 
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         return self.activation(x @ self.weights + self.bias)
 
     def reset_param(self, method='xavier'):
@@ -52,9 +55,14 @@ class Linear(Module):
 class Embedding(Module):
     def __init__(self, num_embeddings, embed_dim):
         super().__init__()
-        
-        self.weights = Tensor()
+        self.weights = randn(num_embeddings, embed_dim, requires_grad=True)
+
+    def forward(self, idxs: Tensor) -> Tensor:
+        assert idxs.__class__ == Tensor, 'indexes must be Tensor'
+        return self.weights[idxs]
 
 
 if __name__ == '__main__':
-    x = random((10, 10))
+    embed = Embedding(10, 2)
+    x = embed(Tensor([[1, 2], [1, 3]]))
+    print(x)

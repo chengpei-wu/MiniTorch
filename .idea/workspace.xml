@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="fix(Tensor): modify slice gradient computation">
-      <change afterPath="$PROJECT_DIR$/mt/auto_grad/math.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mt/auto_grad/matrix.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mt/auto_grad/rand.py" afterDir="false" />
+    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/auto_grad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mt/auto_grad/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/tensor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mt/nn/layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/layer.py" afterDir="false" />
     </list>
@@ -64,6 +59,7 @@
     "Python.data_loading.executor": "Run",
     "Python.demo.executor": "Run",
     "Python.layer (1).executor": "Run",
+    "Python.layer.executor": "Run",
     "Python.load_dataset.executor": "Run",
     "Python.module.executor": "Run",
     "Python.rand (1).executor": "Run",
@@ -87,29 +83,7 @@
       <recent name="D:\WorkSpace\pythonProject\MiniTorch\mt\dataset" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.rand (1)">
-    <configuration name="data_loading" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MiniTorch" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mt/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/data/data_loading.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.layer">
     <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiniTorch" />
       <option name="ENV_FILES" value="" />
@@ -124,6 +98,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="layer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MiniTorch" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mt/nn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/nn/layer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.layer" />
         <item itemvalue="Python.rand (1)" />
         <item itemvalue="Python.random" />
         <item itemvalue="Python.demo" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.data_loading" />
       </list>
     </recent_temporary>
   </component>
@@ -272,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712814326917</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators">
+      <option name="closed" value="true" />
+      <created>1712922013530</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712922013530</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -281,6 +285,7 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="feat(Tensor): add Tensor.T() and Tensor.reshape()" />
     <MESSAGE value="fix(Tensor): modify slice gradient computation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(Tensor): modify slice gradient computation" />
+    <MESSAGE value="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators" />
   </component>
 </project>
