@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators">
+    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="feat(mt.nn): add nn.Embedding()">
+      <change afterPath="$PROJECT_DIR$/mt/nn/functional.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mt/auto_grad/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/tensor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/nn/layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/nn/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/nn/activations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/nn/loss.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
       <recent name="D:\WorkSpace\pythonProject\MiniTorch\mt\dataset" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.layer">
+  <component name="RunManager" selected="Python.tensor">
     <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiniTorch" />
       <option name="ENV_FILES" value="" />
@@ -172,7 +175,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tensor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiniTorch" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -181,11 +184,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mt/auto_grad" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mt/auto_grad/tensor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tensor" />
         <item itemvalue="Python.layer" />
         <item itemvalue="Python.rand (1)" />
         <item itemvalue="Python.random" />
         <item itemvalue="Python.demo" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712922013530</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat(mt.nn): add nn.Embedding()">
+      <option name="closed" value="true" />
+      <created>1712923714436</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712923714436</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -286,6 +297,7 @@
     <MESSAGE value="feat(Tensor): add Tensor.T() and Tensor.reshape()" />
     <MESSAGE value="fix(Tensor): modify slice gradient computation" />
     <MESSAGE value="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators" />
+    <MESSAGE value="feat(mt.nn): add nn.Embedding()" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(mt.nn): add nn.Embedding()" />
   </component>
 </project>

@@ -90,34 +90,43 @@ class Tensor:
     def sum(self, dim: int) -> 'Tensor':
         return _sum(self, dim)
 
+    def __le__(self, other: 'Tensor'):
+        return self.values < other.values
+
+    def __gt__(self, other: 'Tensor'):
+        return self.values > other.values
+
+    def __eq__(self, other: 'Tensor') -> bool:
+        return self.values == other.values
+
     def __matmul__(self, other: 'Tensor') -> 'Tensor':
         assert self.__class__ == other.__class__, f'{self.__class__} matmul {other.__class__}'
         return _matmul(self, other)
 
-    def __add__(self, other: 'Tensor') -> 'Tensor':
+    def __add__(self, other: Tensorable) -> 'Tensor':
         return _add(self, ensure_tensor(other))
 
-    def __radd__(self, other: 'Tensor') -> 'Tensor':
+    def __radd__(self, other: Tensorable) -> 'Tensor':
         return _add(ensure_tensor(other), self)
 
-    def __iadd__(self, other: 'Tensor') -> 'Tensor':
+    def __iadd__(self, other: Tensorable) -> 'Tensor':
         self.data = self.values + ensure_tensor(other).values
         return self
 
-    def __sub__(self, other: 'Tensor') -> 'Tensor':
+    def __sub__(self, other: Tensorable) -> 'Tensor':
         return _sub(self, ensure_tensor(other))
 
-    def __rsub__(self, other: 'Tensor') -> 'Tensor':
+    def __rsub__(self, other: Tensorable) -> 'Tensor':
         return _sub(ensure_tensor(other), self)
 
-    def __isub__(self, other: 'Tensor') -> 'Tensor':
+    def __isub__(self, other: Tensorable) -> 'Tensor':
         self.data = self.values - ensure_tensor(other).values
         return self
 
-    def __mul__(self, other: 'Tensor') -> 'Tensor':
+    def __mul__(self, other: Tensorable) -> 'Tensor':
         return _mul(self, ensure_tensor(other))
 
-    def __rmul__(self, other: 'Tensor') -> 'Tensor':
+    def __rmul__(self, other: Tensorable) -> 'Tensor':
         return _mul(ensure_tensor(other), self)
 
     def __neg__(self) -> 'Tensor':
@@ -327,4 +336,10 @@ def _neg(tensor: Tensor) -> Tensor:
 
 
 if __name__ == '__main__':
-    ...
+    a = Tensor(2)
+    x = Tensor(3, requires_grad=True)
+
+    y = 3 * x
+
+    y.backward()
+    print(x.grad)
