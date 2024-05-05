@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="feat(mt.nn): add nn.Embedding()">
-      <change afterPath="$PROJECT_DIR$/mt/nn/functional.py" afterDir="false" />
+    <list default="true" id="88cd8c49-9229-4ba2-b340-c43032b36090" name="更改" comment="style:">
+      <change afterPath="$PROJECT_DIR$/mt/optim/scheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mt/storage/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/auto_grad/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/auto_grad/tensor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/nn/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/nn/activations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mt/nn/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/tensor/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/math.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/tensor/math.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/tensor/matrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/rand.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/tensor/rand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/auto_grad/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/tensor/tensor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/dataset/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/data/data_loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/dataset/data_loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/data/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/dataset/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/data/dataset/minst.csv" beforeDir="false" afterPath="$PROJECT_DIR$/mt/dataset/dataset/minst.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/data/load_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/dataset/load_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/nn/layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/nn/layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/optmizer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/optim/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mt/optmizer/optimizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/mt/optim/optimizers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +84,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/WorkSpace/pythonProject/MiniTorch/mt/dataset/data",
+    "last_opened_file_path": "D:/WorkSpace/pythonProject/MiniTorch",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -202,7 +214,6 @@
         <item itemvalue="Python.tensor" />
         <item itemvalue="Python.layer" />
         <item itemvalue="Python.rand (1)" />
-        <item itemvalue="Python.random" />
         <item itemvalue="Python.demo" />
       </list>
     </recent_temporary>
@@ -287,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712923714436</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="style:">
+      <option name="closed" value="true" />
+      <created>1712930408507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712930408507</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -298,6 +317,7 @@
     <MESSAGE value="fix(Tensor): modify slice gradient computation" />
     <MESSAGE value="refactor(Tensor): add random tensor generators&#10;&#10;1) add random tensor generators&#10;2) add argument type hints&#10;3) add tensor generators" />
     <MESSAGE value="feat(mt.nn): add nn.Embedding()" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(mt.nn): add nn.Embedding()" />
+    <MESSAGE value="style:" />
+    <option name="LAST_COMMIT_MESSAGE" value="style:" />
   </component>
 </project>

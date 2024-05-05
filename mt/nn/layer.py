@@ -5,8 +5,8 @@ from mt import random
 from mt.nn.activations import relu
 from mt.nn.activations import tanh
 from mt.nn.module import Module
-from mt.auto_grad.rand import rand, randn
-from mt.auto_grad.matrix import zeros
+from mt.tensor.rand import rand, randn
+from mt.tensor.matrix import zeros
 from typing import Union
 
 

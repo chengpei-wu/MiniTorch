@@ -70,11 +70,11 @@ print(b.grad)
 import numpy as np
 from sklearn.metrics import accuracy_score
 
-from mt.data.data_loading import DataLoader
-from mt.data.load_dataset import load_dataset
+from mt.dataset.data_loading import DataLoader
+from mt.dataset.load_dataset import load_dataset
 from mt.nn.loss import cross_entropy
 from mt.nn.model import MLP
-from mt.optmizer.optimizers import SGD
+from mt.optim.optimizers import SGD
 
 
 def train(model, train_set, test_set, epoch, batch_size, learning_rate):

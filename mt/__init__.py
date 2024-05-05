@@ -1,3 +1,3 @@
-from .auto_grad import *
+from .tensor import *
 from .nn import *
-from .data import *
+from .dataset import *

@@ -5,8 +5,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-from mt.auto_grad.tensor import Tensor
-from mt.data.dataset import Dataset
+from mt.tensor.tensor import Tensor
+from mt.dataset.dataset import Dataset
 
 __all__ = [
     'load_dataset'

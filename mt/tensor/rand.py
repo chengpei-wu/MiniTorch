@@ -1,7 +1,7 @@
 import numpy as np
 from typing import Union
 
-from mt.auto_grad.tensor import Tensor
+from mt.tensor.tensor import Tensor
 
 
 def random(shape: Union[int, tuple], requires_grad: bool = False) -> Tensor:

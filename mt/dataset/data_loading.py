@@ -1,7 +1,7 @@
 from tqdm import tqdm
 
-from mt.data.load_dataset import load_dataset
-from mt.data.dataset import Dataset
+from mt.dataset.load_dataset import load_dataset
+from mt.dataset.dataset import Dataset
 
 
 class DataLoader:
@@ -14,6 +14,9 @@ class DataLoader:
 
     def __iter__(self):
         return self
+
+    def __len__(self):
+        return self.length
 
     def __next__(self):
         if self.index >= self.length:
